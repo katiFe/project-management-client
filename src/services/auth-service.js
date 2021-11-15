@@ -9,7 +9,9 @@ class AuthService {
   }
 
  signup = (username, password) => {
-    return this.service.post('/signup', { username, password }).then(response => response.data);
+    return this.service
+    .post('/signup', { username, password })
+    .then(response => response.data);
   }; 
 
   loggedin = () => {
@@ -25,11 +27,6 @@ class AuthService {
   };
 }
 
-
-
-// class AuthService is used to organize and group the methods.
-// To get an object containing all the methods we just need to
-// instantiate the new AuthService object.
 const authService = new AuthService();
 
 export default authService;
